@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Dynamic Method Dispatch</title>
+<style>
+#x1{
+font-size:20px
+}
+#x2{
+font-size:33px
+}
+body 
+{
+  background-color:darkcyan;
+  color: azure;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.code,.out{
+  background-color: white;
+  color: black;
+  padding: 2%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+.center1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+<h1><u>Dynamic Method Dispatch</u></h1>
+<p id="x1">Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time. Dynamic method dispatch is a mechanism by which a call to an overridden method is resolved at runtime.</p>
+<p id="x1">In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable. This is how java implements runtime polymorphism. <p>
+<p id="x2"><u>Example of Java Runtime Polymorphism</u></p>
+<p id="x1">In this example, we are creating two classes Bike and Splendor. Splendor class extends Bike class and overrides its run() method. We are calling the run method by the reference variable of Parent class. Since it refers to the subclass object and subclass method overrides the Parent class method, the subclass method is invoked at runtime.</p>
+<div class="code">
+  class Bike{  <br>
+    void run()<br>
+    {<br>
+      System.out.println("running");<br>
+    }<br>  
+  }  <br>
+  class Splendor extends Bike{<br>  
+    void run()<br>
+    {<br>
+      System.out.println("running safely with 60km");<br>
+    }<br>  
+    <br>
+    public static void main(String args[]){  <br>
+      Bike b = new Splendor();//upcasting  <br>
+      b.run();  <br>
+    }  <br>
+  } <br>
+</div><br><h3><u><b>OUTPUT:</b></u></h1><br><br>
+<div class="out">
+  running safely with 60km.
+</div><br>
+<h1>Difference between Static binding and Dynamic binding in Java?</h1>
+ Static binding in Java occurs during compile time while dynamic binding occurs during runtime. Static binding uses type (class) information for binding while dynamic binding uses instance of class(Object) to resolve calling of method at run-time. Overloaded methods are bonded using static binding while overridden methods are bonded using dynamic binding at runtime.
+<br><br>In simpler terms, Static binding means when the type of object which is invoking the method is determined at compile time by the compiler. While Dynamic binding means when the type of object which is invoking the method is determined at run time by the compiler.
+</body>
+</html>
